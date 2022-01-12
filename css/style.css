@@ -1,0 +1,70 @@
+/* CSS variables ---------------------------- */
+
+:root {
+  --navbar-height: 55px;
+}
+
+/* ------------------------------------------ */
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 40px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.subtext {
+  font-style: italic;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body {
+  padding-top: 40px;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.main-container {
+  min-height: 400px;
+  max-width: 802px;
+}
+
+.body-text {
+  text-align: justify;
+  justify-content: inter-word;
+}
+
+@media screen and (min-width: 1178px) {
+  .main-container {
+    margin: 0 auto;
+  }
+}
+
+.grid-template {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1%;
+}
+
+.comic-section {
+  margin: 10px auto;
+}
+
+.comic-section > div img {
+  width: 100%;
+}
