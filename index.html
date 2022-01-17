@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/b75ddbcdee.js"
       crossorigin="anonymous"
@@ -30,77 +34,307 @@
     </nav> -->
     <nav></nav>
     <main>
-      <div class="main-container">
-        <
-        <div class="first-section">
-          <h1>David Huang</h1>
+      <h1>David Huang</h1>
 
-          <div class="social-links">
-            <!-- <a href="#">github</a>
-            <a href="#">linkedin</a>
-            <a href="#">mail</a> -->
-          </div>
-          <div class="comic-section">
-            <div class="grid-template">
-              <div class="grid-el" id="el-1">
-                <img src="images/drawingByDay.svg" alt="Coding in the day..." />
-              </div>
-              <div class="grid-el" id="el-2">
-                <img src="images/codingBreak.svg" alt="Coding in the day..." />
-              </div>
-              <div class="grid-el" id="el-3">
-                <img src="images/drawingByDusk.svg" alt="Coding at dusk..." />
-              </div>
-              <div class="grid-el" id="el-4">
-                <img
-                  src="images/drawingByNight.svg"
-                  alt="Coding in the night"
-                />
-              </div>
-            </div>
-          </div>
+      <p class="subtext">I like to code.</p>
 
-          <!-- <i class="fab fa-github"></i>
-          <i class="fab fa-linkedin"></i>
-          <i class="fas fa-envelope"></i> -->
-          <div class="body-text">
-            <h2>about me</h2>
-            <p class="body-text">
-              A matrix is said to have full rank if its rank equals the largest
-              possible for a matrix of the same dimensions, which is the lesser
-              of the number of rows and columns. A matrix is said to be
-              rank-deficient if it does not have full rank. The rank deficiency
-              of a matrix is the difference between the lesser of the number of
-              rows and columns, and the rank.
-            </p>
+      <div class="comic-section">
+        <div class="grid-template">
+          <div class="grid-el" id="el-1">
+            <img src="images/drawingByDay.svg" alt="Coding in the day..." />
           </div>
-          <div class="body-text">
-            <h2>projects</h2>
-            <p class="body-text">
-              A matrix is said to have full rank if its rank equals the largest
-              possible for a matrix of the same dimensions, which is the lesser
-              of the number of rows and columns. A matrix is said to be
-              rank-deficient if it does not have full rank. The rank deficiency
-              of a matrix is the difference between the lesser of the number of
-              rows and columns, and the rank.
-            </p>
+          <div class="grid-el" id="el-2">
+            <img src="images/codingBreak.svg" alt="Coding in the day..." />
           </div>
-
-          <div class="body-text">
-            <h2>blog</h2>
-            <p class="body-text">
-              A matrix is said to have full rank if its rank equals the largest
-              possible for a matrix of the same dimensions, which is the lesser
-              of the number of rows and columns. A matrix is said to be
-              rank-deficient if it does not have full rank. The rank deficiency
-              of a matrix is the difference between the lesser of the number of
-              rows and columns, and the rank.
-            </p>
+          <div class="grid-el" id="el-3">
+            <img src="images/drawingByDusk.svg" alt="Coding at dusk..." />
+          </div>
+          <div class="grid-el" id="el-4">
+            <img src="images/drawingByNight.svg" alt="Coding in the night" />
           </div>
         </div>
       </div>
 
-      <div class="first-section"></div>
+      <!-- <i class="fab fa-github"></i>
+          <i class="fab fa-linkedin"></i>
+          <i class="fas fa-envelope"></i> -->
+
+      <div class="tabset">
+        <input
+          type="radio"
+          name="tabset_1"
+          id="tabset_1_projects"
+          hidden
+          aria-hidden="true"
+          checked
+        />
+        <input
+          type="radio"
+          name="tabset_1"
+          id="tabset_1_about"
+          hidden
+          aria-hidden="true"
+        />
+        <input
+          type="radio"
+          name="tabset_1"
+          id="tabset_1_blog"
+          hidden
+          aria-hidden="true"
+        />
+
+        <ul hidden aria-hidden="true">
+          <li><label for="tabset_1_projects">projects</label></li>
+          <li><label for="tabset_1_about">about me</label></li>
+          <li><label for="tabset_1_blog">blog</label></li>
+        </ul>
+
+        <div>
+          <section>
+            <h2>Description</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id
+              elementum neque, ac pharetra tortor. Vivamus ac vehicula augue.
+              Curabitur pretium commodo nisi id pellentesque.
+            </p>
+          </section>
+          <section>
+            <h2>Statistics</h2>
+            <p>
+              Sed ut leo in turpis efficitur convallis at bibendum erat.
+              Curabitur in egestas ex. Etiam efficitur sagittis molestie.
+              Praesent condimentum elementum ipsum sit amet euismod. Sed
+              vestibulum, leo ac iaculis fringilla, felis nulla placerat turpis,
+              eu aliquam elit risus vel tellus.
+            </p>
+          </section>
+          <section>
+            <h2>Reviews</h2>
+            <p>
+              Donec non nunc ac augue ornare aliquam. Aenean sed volutpat arcu.
+              Sed molestie lacus placerat nisl gravida condimentum.
+            </p>
+          </section>
+          <section>
+            <h2>Contact</h2>
+            <p>
+              Nullam nec condimentum lacus. Integer dapibus velit nec ipsum
+              varius, a pharetra arcu imperdiet. Donec pretium libero a
+              tincidunt vulputate. Mauris feugiat tempor lectus, quis placerat
+              mi congue sit amet.
+            </p>
+          </section>
+        </div>
+      </div>
+
+      <section id="projects">
+        <p>I've dabbled across the board.</p>
+        <div class="accordion-body">
+          <div class="accordion">
+            <div class="container">
+              <div class="label">
+                <h3>Kung Fu Bot</h3>
+                <ul class="project-tags">
+                  <li>python</li>
+                  <li>django</li>
+                  <li>celery</li>
+                  <li>facebook messenger api</li>
+                  <li>google drive api</li>
+                </ul>
+              </div>
+              <div class="content">
+                Hypertext Markup Language (HTML) is a computer language that
+                makes up most web pages and online applications. A hypertext is
+                a text that is used to reference other pieces of text, while a
+                markup language is a series of markings that tells web servers
+                the style and structure of a document. HTML is very simple to
+                learn and use.
+              </div>
+            </div>
+            <hr />
+            <div class="container">
+              <div class="label">
+                <h3>Personal Website</h3>
+                <ul class="project-tags">
+                  <li>html & css</li>
+                  <li>javascript</li>
+                </ul>
+              </div>
+              <div class="content">
+                CSS stands for Cascading Style Sheets. It is the language for
+                describing the presentation of Web pages, including colours,
+                layout, and fonts, thus making our web pages presentable to the
+                users. CSS is designed to make style sheets for the web. It is
+                independent of HTML and can be used with any XML-based markup
+                language. CSS is popularly called the design language of the
+                web.
+              </div>
+            </div>
+            <hr />
+            <div class="container">
+              <div class="label">
+                <h3>Pandemic Pal</h3>
+                <ul class="project-tags">
+                  <li>react</li>
+                  <li>azure active directory</li>
+                  <li>html & css</li>
+                  <li>java</li>
+                  <li>spring boot</li>
+                  <li>mysql</li>
+                </ul>
+              </div>
+              <div class="content">
+                JavaScript is a scripting or programming language that allows
+                you to implement complex features on web pages — every time a
+                web page does more than just sit there and display static
+                information for you to look at — displaying timely content
+                updates, interactive maps, animated 2D/3D graphics, scrolling
+                video jukeboxes, etc. — you can bet that JavaScript is probably
+                involved. It is the third of the web trio.
+              </div>
+            </div>
+            <hr />
+            <div class="container">
+              <div class="label">
+                <h3>InsightUBC</h3>
+                <ul class="project-tags">
+                  <li>javascript</li>
+                  <li>typescript</li>
+                  <li>node</li>
+                </ul>
+              </div>
+              <div class="content">
+                React is a JavaScript library created for building fast and
+                interactive user interfaces for web and mobile applications. It
+                is an open-source, component-based, front-end library
+                responsible only for the application’s view layer. In Model View
+                Controller (MVC) architecture, the view layer is responsible for
+                how the app looks and feels. React was created by Jordan Walke,
+                a software engineer at Facebook.
+              </div>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </section>
+      <section id="about">
+        <p>
+          See my resume, or connect with me through
+          <a
+            href="https://ca.linkedin.com/in/david-huang-a6456b202"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >,
+          <a
+            href="https://github.com/NaturalRecursion"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          or
+          <a
+            href="mailto:dvhuang@student.ubc.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            >email</a
+          >!
+        </p>
+        <p class="body-text">
+          I'm a senior-year student at the University of British Columbia, where
+          I initially majored in biology, switched to mathematics, and then
+          finally settled on computer science - a diverse field of study with a
+          wonderful blend of theory and applications. I was completely
+          fascinated by the theoretical side of things during the first half of
+          my degree, but the ideas eventually started to become too abstract for
+          my tastes. Then a major turning point in my interests came during the
+          2020-2021 academic year, which was a new experience in multiple ways.
+          School was moved entirely online due to the COVID-19 pandemic, and my
+          coursework placed a heavy emphasis on large team programming projects
+          instead of conventional exams. In contrast to my previous experience
+          with theoretical courses, which emphasized a traditional combination
+          of notetaking and test practice, I spent that year mainly going
+          through the following process:
+        </p>
+
+        <ol>
+          <li>
+            Get assigned to work on a project with teammates I've never met
+            before
+          </li>
+          <li>
+            Become intimidated by the required technologies and the project
+            specification
+          </li>
+          <li>Panic!</li>
+          <li>
+            Learn as much as I can from the web and the wizardry of my teammates
+          </li>
+          <li>
+            Discover how our strengths and weaknesses can complement each other
+          </li>
+          <li>
+            Navigate through countless setbacks and successes with my group over
+            many weeks
+          </li>
+          <li>Repeat step 6.</li>
+          <li>
+            Submit the project, with a deeper understanding of myself as a
+            learner and teammate
+          </li>
+        </ol>
+
+        <p>
+          My education that year really could be summarized as "learning by
+          doing". Beyond understanding conceptually how a internet protocol
+          worked, I had to implement a DNS resolver. In my software engineering
+          course, I learned how the fundamentals of test-driven development,
+          asynchronous backend programming and frontend data validation by
+          creating a web application to process user-submitted queries about
+          courses and classrooms at UBC. I also learned learned how to sample .
+          - frontend/ui - backend/database - api - CPSC 317 - CPSC 319/CPSC 304
+          - CPSC 310 In the end, I came out with some great projects. I learned
+          about React by building a interface. Learned about networking by
+          making a DNS resolver. But The most important thing was the ability to
+          work with other people, and manage the relationships. I had experience
+          being the most knowledgable person on my team and also the person
+          dragging everything down. I learned to work with other people - the
+          feeling of struggling through a bug or design issue with other people,
+          learning to listen to others, and succeeding together is something
+          that you live for. conversely, struggling t hrough conflict, enduring
+          failure toghether, is an invaluable lesson that this is what life
+          looks like - being with other people I've done a lot of growing. I
+          realized that as beautiful theory may be, this is the sort of stuff
+          that gets you up in the morning - the prospect of a new project and
+          being part of your team.
+        </p>
+        <p>
+          both challenged and rewarded me in ways I had never felt before. Some
+          of my best memories from university, slogging through challenges
+          together triumphing, and also some of my most challenging tests. was
+          therefore done through a paradigm completely new to me, one that was
+          completely different to a traditional paradigm. in an entirely new
+          paradigm of learning I came into that year accustomed to a pattern of
+          listening to lectures, reading notes and attempting practice problems.
+          In contrast, Whereas achieving success in previous coursework usually
+          meant reading notes carefully and doing practice problems, I was
+          previously used to reading notes and attempting practice problems in
+          my previous studies, my learning that year
+        </p>
+
+        <p>
+          how do you make a system scalable? robust? maintainable? i wanted more
+        </p>
+      </section>
+
+      <section id="#blog">
+        <h2>blog</h2>
+        <p class="body-text"></p>
+        <p class="body-text">
+          Me as a computer science student talking to my past self in the
+          chemistry lab:
+        </p>
+      </section>
     </main>
   </body>
 </html>

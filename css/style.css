@@ -2,6 +2,11 @@
 
 :root {
   --navbar-height: 55px;
+  --size: 19px;
+  --title-color: #2d3a42;
+  --title-color-blue: #1f5d7c;
+  /*old blue was #297ca5 */
+  /* #2f8ebd; */
 }
 
 /* ------------------------------------------ */
@@ -22,26 +27,35 @@ html {
   margin: 0;
 }
 
-h1 {
-  font-size: 40px;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
-.subtext {
-  font-style: italic;
-  margin-top: 0;
-  padding-top: 0;
-}
-
 body {
   padding-top: 40px;
   font-family: "Titillium Web", sans-serif;
 }
 
-.main-container {
+h1 {
+  font-size: 40px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-family: "Roboto Slab", serif;
+  color: var(--title-color);
+}
+
+h2 {
+  font-family: "Roboto Slab", serif;
+  color: var(--title-color);
+  font-size: 25px;
+}
+
+main {
   min-height: 400px;
-  max-width: 802px;
+  max-width: 902px;
+}
+
+.subtext {
+  font-family: "Titillium Web", sans-serif;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 18px;
 }
 
 .body-text {
@@ -49,8 +63,12 @@ body {
   justify-content: inter-word;
 }
 
-@media screen and (min-width: 1178px) {
-  .main-container {
+section {
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  main {
     margin: 0 auto;
   }
 }
@@ -62,9 +80,141 @@ body {
 }
 
 .comic-section {
-  margin: 10px auto;
+  margin: 10px auto 0px auto;
+}
+
+a {
+  color: var(--title-color-blue);
+  text-decoration: none;
 }
 
 .comic-section > div img {
   width: 100%;
 }
+
+p {
+  margin-top: 10px;
+}
+
+.project-tags {
+  list-style-type: none;
+  margin-top: 0px;
+}
+
+.project-tags li {
+  border-radius: 12px;
+  font-size: 14px;
+  padding: 0 10px 0 10px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 5px;
+  color: white;
+  background: var(--title-color-blue);
+}
+
+section {
+  margin-top: 15px;
+}
+
+h3 {
+  font-family: "Roboto Slab", sans-serif;
+  color: var(--title-color);
+
+  font-size: 20px;
+  /* border: 1px solid red; */
+}
+
+ol {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  counter-reset: project-step-counter;
+  list-style: none;
+  /* padding-left: calc(1 * var(--size) + 10px + 150px); */
+  padding: 0 10% 0 20%;
+}
+
+ol li {
+  margin: 0 0 0.5rem 0;
+  counter-increment: project-step-counter;
+  position: relative;
+}
+ol li::before {
+  content: counter(project-step-counter);
+  color: white;
+  font-weight: bold;
+  position: absolute;
+
+  left: calc(-1 * var(--size) - 10px);
+  line-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  top: 3px;
+  background: #86a1b3;
+  border-radius: 15%;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 20px 2em 0 2em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  body {
+    padding: 15px 1em 0 1em;
+  }
+
+  .grid-template {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2%;
+    column-gap: 2%;
+    padding: 0 0% 0 0%;
+  }
+}
+
+/* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */
+
+.accordion .container {
+  position: relative;
+  margin-top: 10px;
+}
+
+/* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
+
+.accordion .label {
+  position: relative;
+  color: black;
+  cursor: pointer;
+}
+
+/* Positions the plus sign 5px from the right. Centers it using the transform property. */
+
+.accordion .label h3::before {
+  content: "\00bb";
+  margin-right: 5px;
+  color: var(--title-color-blue);
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+/* Hides the content (height: 0), decreases font size, justifies text and adds transition */
+
+/* .accordion .content {
+  position: relative;
+  background: white;
+  height: 0;
+  font-size: 20px;
+  text-align: justify;
+  width: 780px;
+  overflow: hidden;
+  transition: 0.5s;
+} */
+
+/* Adds a horizontal line between the contents */
+
+/* .accordion hr {
+  width: 100;
+  margin-left: 0;
+  border: 1px solid grey;
+} */
