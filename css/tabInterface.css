@@ -1,0 +1,107 @@
+/*  This stylesheet is for the implementation of a pure CSS tab interface.
+    Minus some styling modifications, credit for this code goes to the 
+    following article written by Jason Knight: 
+    https://levelup.gitconnected.com/tabbed-interfaces-without-javascript-661bab1eaec8
+*/
+
+.tabset {
+  margin-top: 15px;
+}
+
+.tabset > input {
+  display: block; /* "enable" hidden elements in IE/edge */
+  position: absolute; /* then hide them off-screen */
+  left: -100%;
+}
+
+.tabset > ul {
+  /* position: relative;
+  z-index: 999; */
+  list-style: none;
+  display: flex;
+  /* margin-bottom: -1px; */
+
+  justify-content: center;
+}
+
+.tabset > ul li {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 180px;
+  /* height: 100%; */
+  font-size: 20px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+}
+
+/* .tabset > ul label,
+.tabset > div {
+  border: 1px solid green;
+} */
+
+.tabset > ul label {
+  /* display: inline-block; */
+  padding: 0.2em 0.1em;
+  border-right-width: 0;
+  cursor: pointer;
+}
+
+.tabset > div {
+  position: relative;
+  /* background: hsl(220, 100%, 98%); */
+  border-radius: 0 0.5em 0.5em 0.5em;
+}
+
+/* .tabset > input:nth-child(1):focus ~ ul li:nth-child(1) label,
+.tabset > input:nth-child(2):focus ~ ul li:nth-child(2) label,
+.tabset > input:nth-child(3):focus ~ ul li:nth-child(3) label {
+  font-weight: 600;
+} */
+
+.tabset > input:nth-child(1):checked ~ ul li:nth-child(1) label,
+.tabset > input:nth-child(2):checked ~ ul li:nth-child(2) label,
+.tabset > input:nth-child(3):checked ~ ul li:nth-child(3) label {
+  border-bottom-color: hsl(220, 100%, 98%);
+  /* font-weight: 500; */
+  color: var(--title-color);
+}
+
+.tabset > input:nth-child(1):checked ~ ul li:nth-child(1) label,
+.tabset > input:nth-child(2):checked ~ ul li:nth-child(2) label,
+.tabset > input:nth-child(3):checked ~ ul li:nth-child(3) label {
+  border-bottom: 3px solid rgb(29, 111, 187);
+}
+
+.tabset > input:nth-child(1):hover ~ ul li:nth-child(1) label,
+.tabset > input:nth-child(2):hover ~ ul li:nth-child(2) label,
+.tabset > input:nth-child(3):hover ~ ul li:nth-child(3) label {
+  border-bottom: 3px solid rgb(113, 167, 218);
+}
+
+.tabset > div > section {
+  position: absolute;
+  top: -999em;
+  left: -999em;
+}
+
+.tabset > div > section {
+  padding: 0.25em 0em;
+}
+
+.tabset > input:nth-child(1):checked ~ div > section:nth-child(1),
+.tabset > input:nth-child(2):checked ~ div > section:nth-child(2),
+.tabset > input:nth-child(3):checked ~ div > section:nth-child(3) {
+  position: Static;
+}
+
+.tabset > ul label {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

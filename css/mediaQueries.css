@@ -1,0 +1,44 @@
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 20px 2em 0 2em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  body {
+    padding: 15px 1em 0 1em;
+  }
+
+  #el-2,
+  #el-3 {
+    display: none;
+  }
+
+  .grid-template {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2%;
+    column-gap: 2%;
+    padding: 0 0% 0 0%;
+  }
+
+  .tabset {
+    margin-top: calc(10px);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    padding: 15px 1em 0 1em;
+  }
+
+  .grid-template {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2%;
+    column-gap: 2%;
+    padding: 0 0% 0 0%;
+  }
+
+  .tabset {
+    margin-top: calc(15px + 10px);
+  }
+}
