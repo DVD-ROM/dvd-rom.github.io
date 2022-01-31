@@ -30,6 +30,7 @@ html {
 body {
   padding-top: 40px;
   font-family: "Titillium Web", sans-serif;
+  padding-bottom: 80px;
 }
 
 h1 {
@@ -155,14 +156,11 @@ ol li::before {
   text-align: center;
 }
 
-/* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */
-
 .accordion .container {
   position: relative;
-  margin-top: 15px;
+  margin-top: 7px;
+  margin-bottom: 12px;
 }
-
-/* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
 
 .accordion .label {
   position: relative;
@@ -170,58 +168,52 @@ ol li::before {
   cursor: pointer;
 }
 
-/* Positions the plus sign 5px from the right. Centers it using the transform property. */
-
-.accordion .label h3::before {
-  content: "\00bb";
-  margin-right: 5px;
-  color: var(--title-color-blue);
-  display: inline-block;
-  transform: rotate(90deg);
-}
-
-.spiderman-article {
-  border: 1px solid red;
-  display: flex;
-  justify-content: center;
-}
-
-.spiderman-meme {
-  margin: 15px auto;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  row-gap: 1%;
-  border: 1px solid blue;
-}
-
-.scientist {
-  max-width: 330px;
-  border-radius: 5px;
-}
-
-.goblin-img-container {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-}
-
-/* Hides the content (height: 0), decreases font size, justifies text and adds transition */
-
-/* .accordion .content {
+.accordion .content {
   position: relative;
+  margin-top: 7px;
   background: white;
-  height: 0;
-  font-size: 20px;
+  height: auto;
   text-align: justify;
   width: 780px;
   overflow: hidden;
-  transition: 0.5s;
-} */
+  transition: height 0.3s ease-out;
+}
+
+.accordion .container.active .content {
+  height: auto;
+}
+
+/* Changes from plus sign to negative sign once active */
+
+/* .accordion .label h3::before */
 
 /* Adds a horizontal line between the contents */
 
 /* .accordion hr {
-  width: 100;
+  width: 100%;
   margin-left: 0;
   border: 1px solid grey;
 } */
+
+footer {
+  text-align: center;
+}
+
+footer p {
+  display: inline-block;
+  font-family: "Roboto Slab", serif;
+  font-size: 15px;
+  color: var(--title-color);
+  opacity: 0.8;
+}
+
+footer p::before {
+  content: "⮬";
+  color: var(--title-color-blue);
+  position: relative;
+  right: 3px;
+  top: 3px;
+
+  text-align: center;
+  font-size: 25px;
+}

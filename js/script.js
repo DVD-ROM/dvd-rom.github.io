@@ -1,57 +1,69 @@
-// Hide Header on on scroll down
-var didScroll;
-var lastScrollTop = 0;
-var delta = 5;
-var navbarHeight = $("header").outerHeight();
+// This code is from Technique 3: Javascript in the following tutorial https://css-tricks.com/using-css-transitions-auto-dimensions/
+// Slight modifications to querySelector have been made to fit the HTML structure of this webpage.
 
-$(window).scroll(function (event) {
-  didScroll = true;
-});
+function collapseSection(element) {
+  // get the height of the element's inner content, regardless of its actual size
+  var sectionHeight = element.scrollHeight;
 
-setInterval(function () {
-  if (didScroll) {
-    hasScrolled();
-    didScroll = false;
-  }
-}, 250);
+  // temporarily disable all css transitions
+  var elementTransition = element.style.transition;
+  element.style.transition = "";
 
-function hasScrolled() {
-  var st = $(this).scrollTop();
+  // on the next frame (as soon as the previous style change has taken effect),
+  // explicitly set the element's height to its current pixel height, so we
+  // aren't transitioning out of 'auto'
+  requestAnimationFrame(function () {
+    element.style.height = sectionHeight + "px";
+    element.style.transition = elementTransition;
 
-  // Make sure they scroll more than delta
-  if (Math.abs(lastScrollTop - st) <= delta) return;
+    // on the next frame (as soon as the previous style change has taken effect),
+    // have the element transition to height: 0
+    requestAnimationFrame(function () {
+      element.style.height = 0 + "px";
+    });
+  });
 
-  // If they scrolled down and are past the navbar, add class .nav-up.
-  // This is necessary so you never see what is "behind" the navbar.
-  if (st > lastScrollTop && st > navbarHeight) {
-    // Scroll Down
-    $("header").removeClass("nav-down").addClass("nav-up");
-  } else {
-    // Scroll Up
-    if (st + $(window).height() < $(document).height()) {
-      $("header").removeClass("nav-up").addClass("nav-down");
-    }
-  }
-
-  lastScrollTop = st;
+  // mark the section as "currently collapsed"
+  element.setAttribute("data-collapsed", "true");
 }
 
-// function hasScrolled() {
-//   let st = $(this).scrollTop();
+function expandSection(element) {
+  // get the height of the element's inner content, regardless of its actual size
+  var sectionHeight = element.scrollHeight;
 
-//   console.log("was here");
+  // have the element transition to the height of its inner content
+  element.style.height = sectionHeight + "px";
 
-//   if (Math.abs(lastScrollTop - st) <= delta) return;
+  // when the next css transition finishes (which should be the one we just triggered)
+  element.addEventListener("transitionend", function (e) {
+    // remove this event listener so it only gets triggered once
+    element.removeEventListener("transitionend", arguments.callee);
 
-//   console.log("here");
+    // remove "height" from the element's inline styles, so it can return to its initial value
+    element.style.height = null;
+  });
 
-//   if (st > lastScrollTop && st > navbarHeight) {
-//     $("nav").removeClass("nav-down").addClass("nav-up");
-//   } else {
-//     console.log("else case");
-//     if (st + $(window).height() < $(document).height()) {
-//       $("nav").removeClass("nav-up").addClass("nav-down");
-//     }
-//   }
-//   lastScrollTop = st;
-// }
+  // mark the section as "currently not collapsed"
+  element.setAttribute("data-collapsed", "false");
+}
+
+document.querySelectorAll(".label").forEach((label) => {
+  var section = label.querySelector(".content");
+  section.setAttribute("data-collapsed", "true");
+  collapseSection(section);
+});
+
+document.querySelectorAll(".label").forEach((label) => {
+  label.addEventListener("click", function (e) {
+    var section = label.querySelector(".content");
+    console.log(section);
+    var isCollapsed = section.getAttribute("data-collapsed") === "true";
+    console.log("click registered");
+    if (isCollapsed) {
+      expandSection(section);
+      section.setAttribute("data-collapsed", "false");
+    } else {
+      collapseSection(section);
+    }
+  });
+});

@@ -62,22 +62,19 @@
 } */
 
 .tabset > input:nth-child(1):checked ~ ul li:nth-child(1) label,
-.tabset > input:nth-child(2):checked ~ ul li:nth-child(2) label,
-.tabset > input:nth-child(3):checked ~ ul li:nth-child(3) label {
+.tabset > input:nth-child(2):checked ~ ul li:nth-child(2) label {
   border-bottom-color: hsl(220, 100%, 98%);
   /* font-weight: 500; */
   color: var(--title-color);
 }
 
 .tabset > input:nth-child(1):checked ~ ul li:nth-child(1) label,
-.tabset > input:nth-child(2):checked ~ ul li:nth-child(2) label,
-.tabset > input:nth-child(3):checked ~ ul li:nth-child(3) label {
+.tabset > input:nth-child(2):checked ~ ul li:nth-child(2) label {
   border-bottom: 3px solid rgb(29, 111, 187);
 }
 
 .tabset > input:nth-child(1):hover ~ ul li:nth-child(1) label,
-.tabset > input:nth-child(2):hover ~ ul li:nth-child(2) label,
-.tabset > input:nth-child(3):hover ~ ul li:nth-child(3) label {
+.tabset > input:nth-child(2):hover ~ ul li:nth-child(2) label {
   border-bottom: 3px solid rgb(113, 167, 218);
 }
 
@@ -92,9 +89,8 @@
 }
 
 .tabset > input:nth-child(1):checked ~ div > section:nth-child(1),
-.tabset > input:nth-child(2):checked ~ div > section:nth-child(2),
-.tabset > input:nth-child(3):checked ~ div > section:nth-child(3) {
-  position: Static;
+.tabset > input:nth-child(2):checked ~ div > section:nth-child(2) {
+  position: static;
 }
 
 .tabset > ul label {
