@@ -53,6 +53,10 @@ main {
   max-width: 802px;
 }
 
+.compressed-paragraph {
+  margin-top: 2px;
+}
+
 .subtext {
   font-family: "Titillium Web", sans-serif;
   margin-top: 0;
@@ -103,6 +107,10 @@ p {
   margin-top: 10px;
 }
 
+h4 {
+  margin-top: 10px;
+}
+
 .project-tags {
   list-style-type: none;
   margin-top: 0px;
@@ -116,7 +124,7 @@ p {
   margin-right: 5px;
   margin-top: 5px;
   color: white;
-  background: var(--title-color-blue);
+  background: #1a4e68;
 }
 
 h3 {
@@ -173,8 +181,8 @@ ol li::before {
   margin-top: 7px;
   background: white;
   height: auto;
-  text-align: justify;
-  width: 780px;
+  /* text-align: justify; */
+  /* width: 780px; */
   overflow: hidden;
   transition: height 0.3s ease-out;
 }
