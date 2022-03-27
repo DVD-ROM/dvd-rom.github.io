@@ -47,16 +47,16 @@ function expandSection(element) {
   element.setAttribute("data-collapsed", "false");
 }
 
-document.querySelectorAll(".label").forEach((label) => {
-  var section = label.querySelector(".content");
+document.querySelectorAll(".container").forEach((container) => {
+  var section = container.querySelector(".content");
   section.setAttribute("data-collapsed", "true");
   collapseSection(section);
 });
 
-document.querySelectorAll(".label").forEach((label) => {
+document.querySelectorAll(".container").forEach((container) => {
+  var label = container.querySelector(".label");
   label.addEventListener("click", function (e) {
-    var section = label.querySelector(".content");
-    console.log(section);
+    var section = container.querySelector(".content");
     var isCollapsed = section.getAttribute("data-collapsed") === "true";
     console.log("click registered");
     if (isCollapsed) {

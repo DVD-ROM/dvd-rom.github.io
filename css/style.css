@@ -124,7 +124,7 @@ h4 {
   margin-right: 5px;
   margin-top: 5px;
   color: white;
-  background: #1a4e68;
+  background: #133c50;
 }
 
 h3 {
@@ -166,13 +166,13 @@ ol li::before {
 
 .accordion .container {
   position: relative;
-  margin-top: 7px;
-  margin-bottom: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid gray;
 }
 
 .accordion .label {
   position: relative;
-  color: black;
   cursor: pointer;
 }
 
