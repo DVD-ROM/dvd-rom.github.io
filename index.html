@@ -234,18 +234,99 @@
                     <ul class="project-tags">
                       <li>python</li>
                       <li>django</li>
-                      <li>celery for python</li>
+                      <li>redis queue</li>
                       <li>facebook messenger api</li>
-                      <li>google drive api</li>
                     </ul>
                   </div>
                   <div class="content">
-                    Hypertext Markup Language (HTML) is a computer language that
-                    makes up most web pages and online applications. A hypertext
-                    is a text that is used to reference other pieces of text,
-                    while a markup language is a series of markings that tells
-                    web servers the style and structure of a document. HTML is
-                    very simple to learn and use.
+                    <p>
+                      To practice server-side development using Python while
+                      having some fun, I am currently creating this Django
+                      project for the UBC Kung Fu Club. People regularly message
+                      the club's Facebook page to inquire about its activities
+                      and classes. While some of these inquiries may be
+                      complicated enough to require a tailored response from a
+                      club executive, many others only need fairly generic
+                      replies that don't need to be personalized. This project
+                      addresses the generic case by handling the backend logic
+                      of a "Frequently" Asked Questions" menu that is shown in
+                      the Facebook chat box whenever a user messages the club
+                      page. Each option in this menu corresponds to a certain
+                      inquiry about the club; when the user selects an option,
+                      the server will instantly respond with appropriate
+                      information and media content. This way, the user can
+                      learn about opportunities and classes within the club
+                      without having to wait for the executive team to check
+                      Facebook.
+                    </p>
+                    <p>
+                      In order to implement this functionality, the backend
+                      server must be designed to conform to the
+                      <a
+                        href="https://developers.facebook.com/docs/messenger-platform/reference/send-api/"
+                        >Send API</a
+                      >, which specifies how the delivery and handling of
+                      messages on the Facebook Messenger platform should be
+                      automated. Essentially, Facebook triggers the POST
+                      endpoint of the server each time the user interacts with
+                      the club using Messenger. The server is then responsible
+                      for determining the appropriate response and sending it to
+                      Facebook's API in the correct format so it may be
+                      redirected back to the user.
+                    </p>
+                    <p>
+                      Having to design an application that could fulfill
+                      Facebook's standards relating to performance and security
+                      was a fun exercise that gave me training with a diverse
+                      range of backend concepts. For example, Facebook requires
+                      that a response is returned within 20 seconds for each
+                      HTTP request sent to the server. In general, however, 20
+                      seconds may not be enough time for the server to execute
+                      necessary actions - for example, large amounts of data may
+                      have to be fetched from a third-party API. It was thus
+                      ideal to introduce asynchronity into my Django
+                      application, allowing long tasks to be completed in the
+                      background and freeing the normal flow of execution to
+                      work on other server jobs instead. I learned to accomplish
+                      this using Redis Queue as a message broker and Redis as a
+                      task queue. This project also gave me experience with
+                      securing my HTTP endpoints, since I had to ensure that my
+                      server responded only to requests that were sent by
+                      Facebook. Such requests are distinguished by the existence
+                      of a special HMAC cryptographic code in the header. I thus
+                      implemented this verification step Create a SHA1 hmac
+                      based on
+                    </p>
+
+                    <p>
+                      The other fun yet challenging part was creating a
+                      user-friendly server experience that is rich with media.
+                    </p>
+                    <ul>
+                      <li>
+                        involves setting up a http server with get and post
+                        endpoints
+                      </li>
+
+                      <li>
+                        must respond within 20 seconds, use Redis queue for
+                        asynchronous management
+                      </li>
+                      <li>
+                        need to ensure requests only come from Facebook, do HMAC
+                        validation
+                      </li>
+                      <li>
+                        since it's for execs to use, need to make sure
+                        information isn't hardcoded, from json
+                      </li>
+                      <li>
+                        postback messages have to conform to formatting
+                        requirements, media support and use of Facebook
+                        templates for rich viewing experience and easier to
+                        understand
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div class="container">
@@ -376,7 +457,7 @@
                       work involved in this sprint consisted of modifying
                       existing code to generalize its purpose. This process
                       taught us a lot of valuable lessons regarding how to write
-                      code that was readable, maintanable and extensible to
+                      code that was readable, maintainable and extensible to
                       change. I found <em>abstraction</em> to be absolutely key
                       to this - by taking advantage of the programming
                       constructs built into Javascript such as objects and
