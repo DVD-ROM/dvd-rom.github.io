@@ -1,0 +1,235 @@
+/* CSS variables ---------------------------- */
+
+:root {
+  --navbar-height: 55px;
+  --size: 19px;
+  --title-color: #2d3a42;
+  --title-color-blue: #1f5d7c;
+  /*old blue was #297ca5 */
+  /* #2f8ebd; */
+}
+
+/* ------------------------------------------ */
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding-top: 40px;
+  font-family: "Titillium Web", sans-serif;
+  padding-bottom: 80px;
+}
+
+h1 {
+  font-size: 40px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-family: "Roboto Slab", serif;
+  color: var(--title-color);
+}
+
+.bold-body {
+  font-family: "Titillium Web", sans-serif;
+  color: var(--title-color);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+main {
+  min-height: 400px;
+  max-width: 802px;
+}
+
+.compressed-paragraph {
+  margin-top: 2px;
+}
+
+.subtext {
+  font-family: "Titillium Web", sans-serif;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 18px;
+}
+
+.body-text {
+  text-align: justify;
+  justify-content: inter-word;
+}
+
+.body-content {
+  margin-top: 15px;
+  border-top: 1px solid rgb(221, 221, 221);
+}
+
+section {
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    margin: 0 auto;
+  }
+}
+
+.grid-template {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1%;
+}
+
+.comic-section {
+  margin: 10px auto 0px auto;
+}
+
+a {
+  color: var(--title-color-blue);
+  text-decoration: none;
+}
+
+.comic-section > div img {
+  width: 100%;
+}
+
+p {
+  margin-top: 10px;
+}
+
+h4 {
+  margin-top: 10px;
+}
+
+.project-tags {
+  list-style-type: none;
+  margin-top: 0px;
+}
+
+.project-tags li {
+  border-radius: 12px;
+  font-size: 14px;
+  padding: 0 10px 0 10px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 5px;
+  color: white;
+  background: #133c50;
+}
+
+.project-tags .github-link {
+  border: 2px solid var(--title-color);
+  color: var(--title-color);
+  background: white;
+}
+
+h3 {
+  font-family: "Titillium Web", sans-serif;
+  color: var(--title-color);
+  font-weight: 900;
+  /* border: 1px solid red; */
+}
+
+ol {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  counter-reset: project-step-counter;
+  list-style: none;
+  /* padding-left: calc(1 * var(--size) + 10px + 150px); */
+  padding: 0 10% 0 20%;
+}
+
+ol li {
+  margin: 0 0 0.5rem 0;
+  counter-increment: project-step-counter;
+  position: relative;
+}
+ol li::before {
+  content: counter(project-step-counter);
+  color: white;
+  font-weight: bold;
+  position: absolute;
+
+  left: calc(-1 * var(--size) - 10px);
+  line-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  top: 3px;
+  background: #86a1b3;
+  border-radius: 15%;
+  text-align: center;
+}
+
+.accordion .container {
+  position: relative;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.accordion .label h3 {
+  position: relative;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.accordion .content {
+  position: relative;
+  margin-top: 7px;
+  background: white;
+  height: auto;
+  /* text-align: justify; */
+  /* width: 780px; */
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+
+.accordion .container.active .content {
+  height: auto;
+}
+
+/* Changes from plus sign to negative sign once active */
+
+/* .accordion .label h3::before */
+
+/* Adds a horizontal line between the contents */
+
+/* .accordion hr {
+  width: 100%;
+  margin-left: 0;
+  border: 1px solid grey;
+} */
+
+footer {
+  text-align: center;
+}
+
+footer p {
+  display: inline-block;
+  font-family: "Roboto Slab", serif;
+  font-size: 15px;
+  color: var(--title-color);
+  opacity: 0.8;
+}
+
+footer p::before {
+  content: "⮬";
+  color: var(--title-color-blue);
+  position: relative;
+  right: 3px;
+  top: 3px;
+
+  text-align: center;
+  font-size: 25px;
+}
