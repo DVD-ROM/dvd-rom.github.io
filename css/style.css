@@ -11,6 +11,24 @@
 
 /* ------------------------------------------ */
 
+:root {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+input,
+textarea,
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
