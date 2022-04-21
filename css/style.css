@@ -237,17 +237,6 @@ footer p {
   display: inline-block;
   font-family: "Roboto Slab", serif;
   font-size: 15px;
-  color: var(--title-color);
+  color: #566b78;
   opacity: 0.8;
-}
-
-footer p::before {
-  content: "⮬";
-  color: var(--title-color-blue);
-  position: relative;
-  right: 3px;
-  top: 3px;
-
-  text-align: center;
-  font-size: 25px;
 }
