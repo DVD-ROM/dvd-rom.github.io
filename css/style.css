@@ -127,6 +127,12 @@ h4 {
   background: #133c50;
 }
 
+.project-tags .github-link {
+  border: 2px solid var(--title-color);
+  color: var(--title-color);
+  background: white;
+}
+
 h3 {
   font-family: "Titillium Web", sans-serif;
   color: var(--title-color);
@@ -168,12 +174,14 @@ ol li::before {
   position: relative;
   padding-top: 12px;
   padding-bottom: 12px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgb(224, 224, 224);
 }
 
-.accordion .label {
+.accordion .label h3 {
   position: relative;
   cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
 }
 
 .accordion .content {

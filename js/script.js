@@ -54,7 +54,9 @@ document.querySelectorAll(".container").forEach((container) => {
 });
 
 document.querySelectorAll(".container").forEach((container) => {
-  var label = container.querySelector(".label");
+  console.log(container);
+  var label = container.querySelector("h3");
+  console.log(label);
   label.addEventListener("click", function (e) {
     var section = container.querySelector(".content");
     var isCollapsed = section.getAttribute("data-collapsed") === "true";
